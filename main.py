@@ -55,11 +55,13 @@ def classify_and_generate_diagram(text):
         }
 
     # 3. Validar y generar diagrama 
+    decoder = JsonPuml(data)
+    svg_path = decoder.generate_svg()
 
     return {
         "text": text,
         "analysis": intent_result,
-        "svg": None  # TODO: Agregar SVG generado
+        "svg_path": svg_path
     }
 
 if __name__ == "__main__":
